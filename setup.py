@@ -5,6 +5,7 @@ setup(
     version='0.1.0',
     description='Simple module for getting values from KY040 and similar rotary encoders',
     url='https://github.com/AllanGallop/RPi_GPIO_Rotary',
+    download_url='https://github.com/AllanGallop/RPi_GPIO_Rotary/archive/0.1.0.tar.gz',
     author='Allan Gallop',
     author_email='allangallop@gmail.com',
     keywords='rotary encoder KY040 raspberry pi GPIO',
