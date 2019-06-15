@@ -1,1 +1,2 @@
-#Empty init file to make module
+#__init__.py
+from RPi_GPIO_Rotary import rotary

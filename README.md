@@ -1,4 +1,4 @@
-## RPi_GPIO_Rotary
+## PYPI_Rotary
 > KY040 Rotary Encoder Module
 
 
@@ -13,9 +13,8 @@
 >A simple module for working with KY040 encoders on the Raspberry Pi SBC
 
 ### Features
-1. Callback Functions
+#####1. Callback Functions
 You can callback encoder actions such as `onchange`,`increment` and `decrement` to your own defined functions. /eg/:
-
     ```
     def MyFunction():
         print("Turned Clockwised!")
@@ -24,21 +23,18 @@ You can callback encoder actions such as `onchange`,`increment` and `decrement` 
     encoder.register(increment=MyFunction)
     ...
     ```
-
-2. Variable motion control
+#####2. Variable motion control
 Specify how many 'ticks' of the encoder contribute to an action
 
-
-3. Threading
+#####3. Threaded
 This module uses threading to prevent blocking of the running script
 
-4. Customisable pin configuration
+#####4. Customisable pin configuration
 Set which pins connect the encoder to the Raspberry PI GPIO
 
-### Arguments
+#### Arguments
 ##### Rotary [Constructor] (args)
 Creates instance of rotary using the provided arguments: !(clk,dt,sw,tck)!
-
 | Argument | Description | Optional | Default |
 |----------|-------------|----------|---------|
 | clk | Clock Pin | No | |
@@ -48,7 +44,6 @@ Creates instance of rotary using the provided arguments: !(clk,dt,sw,tck)!
 
 ##### Rotary.register(args)
 Callbacks are optional and can be configured ad-hock providing the current rotary object is stopped / not started
-
 | Argument | Description |
 |----------|-------------|
 | increment| Callback when encoder is turned clockwise|
@@ -65,9 +60,8 @@ Stops monitoring the encoder, useful when dealing with changes in the UI
 
 ### Examples
 ##### Simple
-
 ```
-from RPi_GPIO_Rotary import rotary
+from PYPI_Rotary import pypi
 
 ## Define Callback functions
 def cwTurn():
@@ -83,7 +77,7 @@ def valueChanged(count):
     print(count) ## Current Counter value
 
 ## Initialise (clk, dt, sw, ticks)
-obj = rotary.Rotary(23,24,25,2)
+obj = pypi.Rotary(23,24,25,2)
 
  ## Register callbacks
 obj.register(increment=cwTurn, decrement=ccwTurn)
@@ -101,23 +95,21 @@ obj.start()
 ## Stop monitoring
 obj.stop()
 ```
-
 ##### Multple Encoders
-
 ```
-from RPi_GPIO_Rotary import rotary
+from PYPI_Rotary import pypi
 
 ...
 ## Callback functions ##
 ...
 
 ## Setup First Encoder
-menu_encoder = rotary.Rotary(23,24,25,2)
+menu_encoder = pypi.Rotary(23,24,25,2)
 menu_encoder.register(increment=menu_up,decrement=menu_down,pressed=selected)
 menu_encoder.start()
 
 ## Setup Second Encoder
-volume_encoder = rotary.Rotary(17,27,22,1)
+volume_encoder = pypi.Rotary(17,27,22,1)
 volume_encoder.register(onchange=setVolume,pressed=mute)
 volume_encoder.start()
 
