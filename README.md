@@ -13,8 +13,9 @@
 >A simple module for working with KY040 encoders on the Raspberry Pi SBC
 
 ### Features
-#####1. Callback Functions
+1. Callback Functions
 You can callback encoder actions such as `onchange`,`increment` and `decrement` to your own defined functions. /eg/:
+
     ```
     def MyFunction():
         print("Turned Clockwised!")
@@ -23,18 +24,21 @@ You can callback encoder actions such as `onchange`,`increment` and `decrement` 
     encoder.register(increment=MyFunction)
     ...
     ```
-#####2. Variable motion control
+
+2. Variable motion control
 Specify how many 'ticks' of the encoder contribute to an action
 
-#####3. Threaded
+
+3. Threading
 This module uses threading to prevent blocking of the running script
 
-#####4. Customisable pin configuration
+4. Customisable pin configuration
 Set which pins connect the encoder to the Raspberry PI GPIO
 
-#### Arguments
+### Arguments
 ##### Rotary [Constructor] (args)
 Creates instance of rotary using the provided arguments: !(clk,dt,sw,tck)!
+
 | Argument | Description | Optional | Default |
 |----------|-------------|----------|---------|
 | clk | Clock Pin | No | |
@@ -44,6 +48,7 @@ Creates instance of rotary using the provided arguments: !(clk,dt,sw,tck)!
 
 ##### Rotary.register(args)
 Callbacks are optional and can be configured ad-hock providing the current rotary object is stopped / not started
+
 | Argument | Description |
 |----------|-------------|
 | increment| Callback when encoder is turned clockwise|
@@ -60,6 +65,7 @@ Stops monitoring the encoder, useful when dealing with changes in the UI
 
 ### Examples
 ##### Simple
+
 ```
 from RPi_GPIO_Rotary import rotary
 
@@ -95,7 +101,9 @@ obj.start()
 ## Stop monitoring
 obj.stop()
 ```
+
 ##### Multple Encoders
+
 ```
 from RPi_GPIO_Rotary import rotary
 
