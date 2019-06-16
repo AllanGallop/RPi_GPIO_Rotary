@@ -1,5 +1,6 @@
 ## PYPI_Rotary
-> KY040 Rotary Encoder Module
+> KY040 Rotary Encoder Module </br>
+> [View on PyPi.org](https://pypi.org/project/RPi-GPIO-Rotary/)
 
 
 ### Sections
@@ -11,7 +12,7 @@
 
 
 ### Description
->A simple module for working with KY040 encoders on the Raspberry Pi SBC
+>A simple module for working with KY040 and similar encoders on the Raspberry Pi SBC. This project is part of a much bigger project design to assist in the designing and implementation of LCD/oLed user interfaces 
 
 ### Features
 1. Callback Functions
@@ -36,8 +37,8 @@ This module uses threading to prevent blocking of the running script
 Set which pins connect the encoder to the Raspberry PI GPIO
 
 ### Install
-####Using PyPi: 
-pip3 install RPi-GPIO-Rotary
+#### Using PyPi: 
+> pip3 install RPi-GPIO-Rotary
 
 ### Arguments
 ##### Rotary [Constructor] (args)
